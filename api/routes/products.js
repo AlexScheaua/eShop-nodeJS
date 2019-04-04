@@ -6,7 +6,7 @@ const Product = require('../models/product')
 
 router.get('/', (req, res, next) => {
   Product.find()
-  .select('_id name description icon imgs price discount discountedPrice stock')
+  .select('_id name description icon imgs price discount discountedPrice stock inCart')
   .exec()
   .then(products =>{
     console.log(products);
@@ -37,7 +37,8 @@ router.post('/', (req, res, next) => {
     price: req.body.price,
     discount: req.body.discount,
     discountedPrice: req.body.discountedPrice,
-    stock: req.body.stock
+    stock: req.body.stock,
+    inCart: req.body.inCart
   });
 
   product.save()
@@ -59,7 +60,7 @@ router.post('/', (req, res, next) => {
 router.get('/:productID', (req, res, next) => {
   const idx = req.params.productID;
   Product.findById(idx)
-  .select('_id name description icon imgs price discount discountedPrice stock')
+  .select('_id name description icon imgs price discount discountedPrice stock inCart')
   .exec()
   .then(doc => {
     console.log(doc);
@@ -77,7 +78,6 @@ router.get('/:productID', (req, res, next) => {
 
 router.put('/:productID', (req, res, next) => {
   const idx = req.params.productID;
-  console.log(req.params.productID);
   Product.update({_id: idx}, {
     $set: {
       name: req.body.name,
@@ -95,7 +95,8 @@ router.put('/:productID', (req, res, next) => {
       price: req.body.price,
       discount: req.body.discount,
       discountedPrice: req.body.discountedPrice,
-      stock: req.body.stock
+      stock: req.body.stock,
+      inCart: req.body.inCart
     }
   })
   .exec()
@@ -105,7 +106,7 @@ router.put('/:productID', (req, res, next) => {
   })
   .catch(err => {
     console.log(err);
-    res.status(500).json(err,result);
+    res.status(500).json(result);
   });
 });
 

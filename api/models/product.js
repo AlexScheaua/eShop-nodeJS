@@ -17,7 +17,8 @@ const productSchema = mongoose.Schema({
   price: Number,
   discount: Number,
   discountedPrice: Number,
-  stock: Number
+  stock: Number,
+  inCart: Boolean
 });
 
 module.exports = mongoose.model('Product',productSchema)
