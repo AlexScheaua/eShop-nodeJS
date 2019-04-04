@@ -82,15 +82,15 @@ router.put('/:productID', (req, res, next) => {
       name: req.body.name,
       description: req.body.description,
       icon: req.body.icon,
-      imgs: {
-        0: req.body.imgs[0],
-        1: req.body.imgs[1],
-        2: req.body.imgs[2],
-        3: req.body.imgs[3],
-        4: req.body.imgs[4],
-        5: req.body.imgs[5],
-        6: req.body.imgs[6]
-      },
+      imgs: [
+        req.body.imgs[0],
+        req.body.imgs[1],
+        req.body.imgs[2],
+        req.body.imgs[3],
+        req.body.imgs[4],
+        req.body.imgs[5],
+        req.body.imgs[6]
+      ],
       price: req.body.price,
       discount: req.body.discount,
       discountedPrice: req.body.discountedPrice,
