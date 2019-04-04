@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server"
   },
   "author": "Alex Scheaua",
   "license": "ISC",
