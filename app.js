@@ -29,7 +29,7 @@ app.use('/products', productRoutes);
 app.use('/cart', cartRoutes);
 
 app.use((req, res, next) => {
-  const error = new Error('404: Not found');
+  const error = new Error('404: Not found. app.js');
   error.status = 404;
   next(error);
 })
