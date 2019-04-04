@@ -105,7 +105,7 @@ router.put('/:productID', (req, res, next) => {
   })
   .catch(err => {
     console.log(err);
-    res.status(500).json(result);
+    res.status(500).json(err,result);
   });
 });
 
