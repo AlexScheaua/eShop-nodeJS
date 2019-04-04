@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const productRoutes = require('./api/routes/products');
 const cartRoutes = require('./api/routes/cart');
 
-mongoose.connect('mongodb+srv://Alex:'+ process.env.MONGO_PASS +'@eshop-api-eyrld.mongodb.net/test?retryWrites=true', {
+mongoose.connect('mongodb+srv://Alex:skeala11@eshop-api-eyrld.mongodb.net/test?retryWrites=true', {
   useNewUrlParser: true
 });
 
