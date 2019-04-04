@@ -77,6 +77,7 @@ router.get('/:productID', (req, res, next) => {
 
 router.put('/:productID', (req, res, next) => {
   const idx = req.params.productID;
+  console.log(req.params.productID);
   Product.update({_id: idx}, {
     $set: {
       name: req.body.name,
