@@ -4,7 +4,7 @@
   "description": "Server api for eShop app",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node server",
     "dev": "nodemon server.js"
   },
   "author": "Alex Scheaua",
